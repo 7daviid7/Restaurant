@@ -104,34 +104,45 @@ export default function Navbar({
                 <Menu className="size-5 text-neutral-900" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-[#F5F2E8]">
-              <SheetHeader>
-                <SheetTitle className="flex items-center gap-2 text-neutral-900">
+            <SheetContent
+              side="right"
+              className="flex flex-col max-w-[40%] bg-[#F5F2E8]"
+            >
+              <div className="flex-grow flex flex-col justify-between">
+                <SheetHeader>
+                  <SheetTitle className="flex items-center gap-2">
+                    <span className="font-title text-[17px] tracking-wide text-neutral-900">
+                      LA CANAL
+                    </span>
+                  </SheetTitle>
+                </SheetHeader>
+                <div className="mt-6 flex flex-col items-center">
+                  {sections.map((s) => (
+                    <Link
+                      key={s.id}
+                      href={`#${s.id}`}
+                      className="px-1 py-3 text-neutral-800"
+                      onClick={() => {
+                        const btn = document.querySelector(
+                          '[data-state="open"][data-radix-collection-item]'
+                        ) as HTMLElement | null;
+                        if (btn) btn.click();
+                      }}
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
+                <div className="flex justify-center mt-auto mb-[100px]">
                   <Image
-                    src="/images/logoLaCanal.jpg"
-                    alt="Logotip"
-                    width={20}
-                    height={20}
+                    src="/images/logoPetit.jpg"
+                    alt="Logotip LA CANAL"
+                    width={100}
+                    height={100}
+                    className="w-* h-* object-contain"
+                    priority
                   />
-                  LA CANAL
-                </SheetTitle>
-              </SheetHeader>
-              <div className="mt-6 flex flex-col">
-                {sections.map((s) => (
-                  <Link
-                    key={s.id}
-                    href={`#${s.id}`}
-                    className="px-1 py-3 text-neutral-800"
-                    onClick={() => {
-                      const btn = document.querySelector(
-                        '[data-state="open"][data-radix-collection-item]'
-                      ) as HTMLElement | null;
-                      if (btn) btn.click();
-                    }}
-                  >
-                    {s.label}
-                  </Link>
-                ))}
+                </div>
               </div>
             </SheetContent>
           </Sheet>

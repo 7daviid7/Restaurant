@@ -24,9 +24,9 @@ export default function ContactSection({
           title="Contacte i reserves"
           subtitle="Truca’ns o escriu-nos per reservar taula. Estarem encantats d’atendre’t."
         />
-        <div className="mt-8 grid gap-8 lg:grid-cols-2">
+        <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:items-start">
           <DecorativeFrame>
-            <div className="space-y-4">
+            <div className="space-y-4 ">
               <div className="flex items-start gap-3">
                 <MapPin
                   className="mt-0.5 size-5 text-neutral-900"
@@ -56,11 +56,24 @@ export default function ContactSection({
                   reservas@restaurant.cat
                 </a>
               </div>
-              <div className="rounded-md bg-[#FBF9F1] p-4 text-sm text-neutral-800">
-                <p>
-                  <strong>Horari:</strong> Dl‑Dv 13:00‑16:00 · 20:00‑23:00 ·
-                  Ds‑Dg 13:00‑16:30 · 20:00‑23:30
-                </p>
+              <div className="rounded-md bg-[#FBF9F1] p-4 text-sm text-neutral-800 flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <strong>Horari:</strong>
+                </div>
+                <div className="flex flex-col">
+                  <div className="flex gap-2">
+                    <span className="font-semibold text-neutral-900">
+                      Dl-Dv:
+                    </span>
+                    <span>13:00-16:00 · 20:00-23:00</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <span className="font-semibold text-neutral-900">
+                      Ds-Dg:
+                    </span>
+                    <span>13:00-16:30 · 20:00-23:30</span>
+                  </div>
+                </div>
               </div>
             </div>
           </DecorativeFrame>
