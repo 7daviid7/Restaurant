@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Entrants",
+    "items": [
+      {
+        "name": "Ostra del Delta amb ponzu",
+        "desc": "Límon, ponzu suau, cibulet",
+        "price": "4,50€ u."
+      },
+      {
+        "name": "Tàrtar de tomàquet",
+        "desc": "Herbes fresques, oli verge extra",
+        "price": "9,50€"
+      },
+      {
+        "name": "Croqueta de rostit",
+        "desc": "Pollastre, vedella, i tòfona",
+        "price": "3,20€ u."
+      }
+    ]
+  },
+  {
+    "title": "Principals",
+    "items": [
+      {
+        "name": "Arròs de pescadors",
+        "desc": "Sépia, gamba, allioli suau",
+        "price": "18,50€"
+      },
+      {
+        "name": "Tataki de tonyina",
+        "desc": "Salsa teriyaki casolana, sèsam",
+        "price": "21,00€"
+      },
+      {
+        "name": "Filet de vedella",
+        "desc": "Parmentier i salsa de pebre verd",
+        "price": "24,50€"
+      }
+    ]
+  },
+  {
+    "title": "Postres",
+    "items": [
+      {
+        "name": "Coulant de xocolata",
+        "desc": "Gelat de vainilla de Madagascar",
+        "price": "7,50€"
+      },
+      {
+        "name": "Cheesecake lleuger",
+        "desc": "Coulis de fruits vermells",
+        "price": "6,90€"
+      }
+    ]
+  }
+]
