@@ -71,7 +71,7 @@ export default function Navbar({
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#e3dfd2] bg-[#F7F4EA]/70 backdrop-blur supports-[backdrop-filter]:bg-[#F7F4EA]/65">
+    <header className="sticky top-0 z-50 w-full border-b border-[#e3dfd2] bg-[#9F9385]/70 backdrop-blur supports-[backdrop-filter]:bg-[#9F9385]/70">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
         <Link href="#hero" className="flex items-center gap-3">
           <Image

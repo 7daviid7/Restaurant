@@ -20,7 +20,7 @@ export default function DecorativeFrame({
         className
       )}
     >
-      <div className="relative rounded-[8px] bg-[#22372B] p-4 sm:p-6 shadow-inner">
+      <div className="relative rounded-[8px] bg-[#9F9385]/70 p-4 sm:p-6 shadow-inner">
         {/* Línia interior amb pseudoelements */}
         <div className="relative z-10">{children}</div>
         <div className="absolute inset-0 rounded-[8px] border-2 border-[#d9d6cb]" />
