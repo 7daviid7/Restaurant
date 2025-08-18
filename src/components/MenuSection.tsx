@@ -48,9 +48,10 @@ export default function MenuSection({ id = "menu" }: MenuSectionProps) {
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {menu.map((cat, idx) => (
             <ViewportReveal key={cat.title} delay={idx * 0.05}>
-              <Card className="border-[#e3dfd2] bg-[#FBF9F1] transition-shadow hover:shadow-md">
+              <Card className="border-[#e3dfd2] bg-[#C0C7A6]/70 transition-shadow hover:shadow-md ">
+                {" "}
                 <CardHeader>
-                  <CardTitle className="font-display text-xl text-neutral-900">
+                  <CardTitle className="font-display text-xl text-neutral-900 ">
                     {cat.title}
                   </CardTitle>
                 </CardHeader>

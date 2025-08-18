@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 419.49px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #231f20;
+        font-family: Cinzel-Regular, Cinzel;
+        font-variation-settings: 'wght' 400;
+      }
+
+      .cls-2 {
+        font-size: 409.43px;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(93.7 501.65)"><tspan x="0" y="0">L</tspan></text>
+  <text class="cls-1" transform="translate(501.58 331.69) rotate(-180) scale(.91 1)"><tspan x="0" y="0">C</tspan></text>
+</svg>

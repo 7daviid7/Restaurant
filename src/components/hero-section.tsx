@@ -1,75 +1,53 @@
-"use client";
-
-import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import DecorativeFrame from "./decorative-frame";
-import ViewportReveal from "./viewport-reveal";
-import type { HTMLAttributes } from "react";
-
-interface HeroProps extends HTMLAttributes<HTMLElement> {
-  id?: string;
+interface HeroSectionEnhancedProps {
+  id: string;
 }
 
-export default function HeroSection({ id = "hero" }: HeroProps) {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 0.3], [0, -20]);
-
+export default function HeroSectionEnhanced({ id }: HeroSectionEnhancedProps) {
   return (
-    <section id={id} className="relative isolate scroll-mt-24 bg-[#F5F2E8]">
-      {/* Suau gradient superior per donar profunditat */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_50%_at_50%_-10%,rgba(0,0,0,0.06),transparent_60%)]" />
-      <div className="container mx-auto max-w-6xl px-4 py-12 sm:py-16">
-        <motion.div style={{ y }}>
-          <DecorativeFrame>
-            <div className="flex flex-col items-center gap-5 text-center sm:gap-6">
-              <ViewportReveal>
-                <h1 className="font-display text-[28px] leading-tight text-neutral-900 sm:text-[36px]">
-                  Cuina honesta, de temporada i amb classe
-                </h1>
-              </ViewportReveal>
-              <ViewportReveal delay={0.1}>
-                <p className="max-w-2xl text-[15px] text-neutral-700 sm:text-base">
-                  Producte local i receptes contemporànies en un espai proper,
-                  viu i amb ànima.
-                </p>
-                <div className="mt-12 flex justify-center">
-                  <div className="max-w-3xl rounded-xl border border-neutral-200 bg-beige-200 p-8 text-center shadow-sm">
-                    <p className="text-[15px] text-neutral-700 sm:text-base">
-                      Som tres cuiners units per una passió compartida: la cuina
-                      honesta, de gust, producte i temporalitat. Ens vam
-                      conèixer estudiant cuina, i avui tornem allà on tot va
-                      començar: Tona, amb moltes ganes de fer allò que més
-                      estimem. Reobrim un restaurant del poble, amb una proposta
-                      que neix del respecte pel producte i per les estacions.
-                      Una cuina sense presses, amb sabors reconeixibles i una
-                      mirada pròpia. Volem crear un espai on menjar bé sigui una
-                      experiència propera, viva i amb ànima.
-                    </p>
-                  </div>
-                </div>
-              </ViewportReveal>
-              <ViewportReveal delay={0.2}>
-                <div className="mt-1 flex flex-col gap-3 sm:flex-row">
-                  <Link href="#menu" className="w-full sm:w-auto">
-                    <Button className="w-full border border-neutral-300 bg-neutral-900 text-[#F5F2E8] hover:bg-neutral-800">
-                      Veure la carta
-                    </Button>
-                  </Link>
-                  <Link href="#contacte" className="w-full sm:w-auto">
-                    <Button
-                      variant="outline"
-                      className="w-full border-neutral-300 bg-[#F7F4EA] text-neutral-900 hover:bg-[#EFEBDD]"
-                    >
-                      Reservar taula
-                    </Button>
-                  </Link>
-                </div>
-              </ViewportReveal>
-            </div>
-          </DecorativeFrame>
-        </motion.div>
+    <section
+      id={id}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src="images/restauranteElegante.png"
+          alt="Restaurant La Canal"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+        {/* Main title */}
+        <div className="mb-8">
+          <h1 className="font-title text-6xl md:text-8xl lg:text-9xl font-bold mb-4 tracking-wider drop-shadow-lg">
+            LA CANAL
+          </h1>
+          <h2 className="font-title text-2xl sm:text-3xl md:text-4xl">
+            RESTAURANT
+          </h2>
+          <div className="w-32 h-px bg-white/60 mx-auto mb-6 m-7"></div>
+
+          <p className="font-body text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl mx-auto">
+            Cuina honesta, de temporada i amb classe
+          </p>
+        </div>
+        {/* Action buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Link href="#menu">
+            <button className="px-8 py-3 bg-white text-neutral-800 font-body text-sm uppercase tracking-wider rounded hover:bg-white/90 transition-colors duration-200">
+              Veure la carta
+            </button>
+          </Link>
+          <Link href="#contacte">
+            <button className="px-8 py-3 border border-white/50 text-white font-body text-sm uppercase tracking-wider rounded hover:bg-white/10 transition-colors duration-200">
+              Reservar taula
+            </button>
+          </Link>
+        </div>
       </div>
     </section>
   );

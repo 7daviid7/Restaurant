@@ -32,28 +32,35 @@ export default function ContactSection({
                   className="mt-0.5 size-5 text-neutral-900"
                   aria-hidden
                 />
-                <p className="text-neutral-800">
-                  Carrer Major, 123
-                  <br />
-                  08000 Barcelona
-                </p>
+                <a
+                  href="https://www.google.com/maps/place/Carrer+Maria+Vivet,+1,+08551+Tona,+Barcelona/@41.8521161,2.2271203,721m/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-800 hover:underline"
+                >
+                  <p className="text-neutral-800">
+                    C/ Maria Vivet, 1.
+                    <br />
+                    08551 Tona, Barcelona.
+                  </p>
+                </a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="size-5 text-neutral-900" aria-hidden />
                 <a
-                  href="tel:+34930000000"
+                  href="tel:+34649596507"
                   className="text-neutral-900 hover:underline"
                 >
-                  +34 930 00 00 00
+                  +34 649 59 65 07
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="size-5 text-neutral-900" aria-hidden />
                 <a
-                  href="mailto:reservas@restaurant.cat"
+                  href="mailto:lacanalrestaurant@gmail.com"
                   className="text-neutral-900 hover:underline"
                 >
-                  reservas@restaurant.cat
+                  lacanalrestaurant@gmail.com
                 </a>
               </div>
               <div className="rounded-md bg-[#FBF9F1] p-4 text-sm text-neutral-800 flex flex-col gap-2">

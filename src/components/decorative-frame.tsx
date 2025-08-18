@@ -7,8 +7,7 @@ interface DecorativeFrameProps {
 }
 
 /**
- * Subtil marc inspirat en la referència: doble línia amb ombra suau.
- * Colors basats en una paleta beige elegant.
+ * Marc amb doble línia interior utilitzant pseudoelements.
  */
 export default function DecorativeFrame({
   children,
@@ -17,16 +16,15 @@ export default function DecorativeFrame({
   return (
     <div
       className={cn(
-        "relative rounded-[10px] p-[1px]",
-        "bg-[linear-gradient(180deg,#CCC,#EEE)]", // línia externa lleu
+        "relative rounded-[10px] p-[2px] bg-[#e3dfd2]", // Línia exterior principal
         className
       )}
-      aria-hidden={false}
     >
-      <div className="rounded-[8px] bg-[#F5F2E8] p-[1px]">
-        <div className="rounded-[6px] bg-[#F7F4EA] shadow-[0_1px_0_#e8e4d8,0_0_0_1px_#d9d6cb_inset]">
-          <div className="rounded-[6px] p-4 sm:p-6">{children}</div>
-        </div>
+      <div className="relative rounded-[8px] bg-[#22372B] p-4 sm:p-6 shadow-inner">
+        {/* Línia interior amb pseudoelements */}
+        <div className="relative z-10">{children}</div>
+        <div className="absolute inset-0 rounded-[8px] border-2 border-[#d9d6cb]" />
+        <div className="absolute inset-[3px] rounded-[6px] border-2 border-[#e8e4d8]" />
       </div>
     </div>
   );

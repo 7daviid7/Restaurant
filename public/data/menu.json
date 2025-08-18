@@ -1,9 +1,9 @@
 [
   {
-    "title": "Entrants",
+    "title": "Plats",
     "items": [
       {
-        "name": "Ostra del Delta amb ponzu",
+        "name": "ethan maricon del Delta amb ponzu",
         "desc": "Límon, ponzu suau, cibulet",
         "price": "4,50€ u."
       },
@@ -20,7 +20,7 @@
     ]
   },
   {
-    "title": "Principals",
+    "title": "Postres",
     "items": [
       {
         "name": "Arròs de pescadors",
@@ -40,7 +40,7 @@
     ]
   },
   {
-    "title": "Postres",
+    "title": "Carta de vins",
     "items": [
       {
         "name": "Coulant de xocolata",

@@ -71,18 +71,18 @@ export default function Navbar({
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#e3dfd2] bg-[#F5F2E8]/85 backdrop-blur supports-[backdrop-filter]:bg-[#F5F2E8]/70">
+    <header className="sticky top-0 z-50 w-full border-b border-[#e3dfd2] bg-[#F7F4EA]/70 backdrop-blur supports-[backdrop-filter]:bg-[#F7F4EA]/65">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
         <Link href="#hero" className="flex items-center gap-3">
           <Image
-            src="/images/logoPetit.jpg"
+            src="/images/logoPetit.svg"
             alt="Logotip LA CANAL"
-            width={42}
-            height={42}
+            width={48}
+            height={48}
             className="w-* h-* object-contain"
             priority
           />
-          <span className="font-title text-[17px] tracking-wide text-neutral-900">
+          <span className="font-title text-[25px] tracking-wide text-neutral-900 m-4">
             LA CANAL
           </span>
         </Link>

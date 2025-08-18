@@ -1,28 +1,43 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
-import type { ReactNode } from "react";
+import type React from "react";
+
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 interface ViewportRevealProps {
-  children: ReactNode;
+  children: React.ReactNode;
   delay?: number;
+  duration?: number;
+  className?: string;
 }
 
-export default function ViewportReveal({
+function ViewportReveal({
   children,
   delay = 0,
+  duration = 0.6,
+  className,
 }: ViewportRevealProps) {
-  const preferReduced = useReducedMotion();
-  const initial = preferReduced ? {} : { opacity: 0, y: 12 };
-  const animate = preferReduced ? {} : { opacity: 1, y: 0 };
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
     <motion.div
-      initial={initial}
-      whileInView={animate}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{
+        duration,
+        delay,
+        ease: [0.25, 0.25, 0, 1],
+      }}
+      className={className}
     >
       {children}
     </motion.div>
   );
 }
+
+export { ViewportReveal };
+export default ViewportReveal;
