@@ -4,10 +4,11 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/navbar";
 import WelcomeModal from "@/components/welcome-modal";
 import HeroSection from "@/components/hero-section";
-import MenuSection from "../components/MenuSection";
+import MenuSection from "@/components/menuSection";
 import GallerySection from "@/components/gallery-section";
 import ContactSection from "@/components/contact-section";
 import PlatsEstrella from "@/components/platsEstrella";
+import Carousel from "@/components/menu-carousel";
 import AboutUs from "@/components/about-us";
 import Footer from "@/components/footer";
 import { title, body } from "@/lib/fonts";
@@ -50,6 +51,7 @@ export default function Page() {
         <AboutUs id="about" />
         <PlatsEstrella id="plats" />
         <MenuSection id="menu" />
+        <Carousel id="carousel" />
         <GallerySection id="galeria" />
         <ContactSection id="contacte" />
       </main>

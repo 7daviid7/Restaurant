@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import SectionHeader from "./section-header";
 import ViewportReveal from "./viewport-reveal";
-import DecorativeFrame from "./decorative-frame";
+import DecorativeFrame from "./decorative-frame-1";
 
 interface MenuSectionProps {
   id?: string;
@@ -47,52 +47,79 @@ export default function MenuSection({ id = "menu" }: MenuSectionProps) {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="max-w-6xl mx-auto px-8 py-12 m-1rem">
+    <div className="bg-gradient-to-br from-amber-50 to-orange-50 py-16">
+      <div className="max-w-7xl mx-auto px-6">
         <DecorativeFrame>
-          <div className="text-center mb-12">
-            <div className="flex justify-center items-center gap-8 mb-8">
-              <span className="text-6xl font-bold text-black">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-4 mb-6">
+              <div className="w-12 h-px bg-gradient-to-r from-transparent to-amber-600"></div>
+              <span className="text-5xl md:text-6xl font-bold text-amber-900 tracking-tight">
                 MENÚ DEL DIA
               </span>
+              <div className="w-12 h-px bg-gradient-to-l from-transparent to-amber-600"></div>
             </div>
+            <p className="text-amber-700 text-lg font-medium">
+              Cuina casolana amb productes frescos
+            </p>
           </div>
-          {/* Menu sections */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10 relative z-10 mx-10">
-            {menu.map((category) => (
-              <div key={category.title} className="space-y-6">
-                <div className="text-center">
-                  <h2 className="text-2xl font-bold text-black mb-2">
-                    {category.title}
-                  </h2>
-                  <div className="w-16 h-px bg-black mx-auto"></div>
-                </div>
 
-                {/* Items del menú */}
-                <div className="space-y-4">
-                  {category.items.map((item) => (
-                    <div
-                      key={item.name}
-                      className="border-b border-gray-200 pb-4 last:border-b-0"
-                    >
-                      <div className="flex justify-between items-start gap-4">
-                        <div className="flex-1">
-                          <h3 className="font-bold text-black text-lg leading-tight mb-1">
-                            {item.name}
-                          </h3>
-                          <p className="text-gray-700 text-sm leading-relaxed">
-                            {item.desc}
-                          </p>
-                        </div>
-                        <span className="font-bold text-black text-lg whitespace-nowrap ml-4">
-                          {item.price}
-                        </span>
-                      </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+            {menu.map((category, index) => (
+              <Card
+                key={category.title}
+                className="bg-white/80 backdrop-blur-sm border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <CardHeader className="pb-4">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white font-bold text-lg">
+                        {category.title.charAt(0)}
+                      </span>
                     </div>
-                  ))}
-                </div>
-              </div>
+                    <CardTitle className="text-2xl font-bold text-amber-900 mb-3">
+                      {category.title}
+                    </CardTitle>
+                    <div className="w-16 h-0.5 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto"></div>
+                  </div>
+                </CardHeader>
+
+                <CardContent>
+                  <div className="space-y-5">
+                    {category.items.map((item, itemIndex) => (
+                      <div key={item.name} className="group relative">
+                        <div className="flex justify-between items-start gap-4">
+                          <div className="flex-1">
+                            <h3 className="font-bold text-gray-900 text-lg leading-tight mb-2 group-hover:text-amber-700 transition-colors">
+                              {item.name}
+                            </h3>
+                            {item.desc && (
+                              <p className="text-gray-600 text-sm leading-relaxed">
+                                {item.desc}
+                              </p>
+                            )}
+                          </div>
+                          <div className="flex flex-col items-end">
+                            <span className="font-bold text-amber-700 text-xl whitespace-nowrap">
+                              {item.price}
+                            </span>
+                          </div>
+                        </div>
+                        {itemIndex < category.items.length - 1 && (
+                          <div className="mt-4 h-px bg-gradient-to-r from-transparent via-amber-200 to-transparent"></div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             ))}
+          </div>
+
+          <div className="text-center mt-12 pt-8 border-t border-amber-200">
+            <p className="text-amber-600 text-sm font-medium">
+              * Els preus poden variar segons la temporada i disponibilitat dels
+              productes
+            </p>
           </div>
         </DecorativeFrame>
       </div>
