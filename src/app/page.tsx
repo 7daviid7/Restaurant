@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/navbar";
 import WelcomeModal from "@/components/welcome-modal";
 import HeroSection from "@/components/hero-section";
-import MenuSection from "@/components/menuSection";
+import MenuSection from "@/components/menu-section";
 import GallerySection from "@/components/gallery-section";
 import ContactSection from "@/components/contact-section";
 import PlatsEstrella from "@/components/platsEstrella";
