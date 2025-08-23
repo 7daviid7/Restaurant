@@ -7,10 +7,11 @@ export default function Footer() {
       <div className="container mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 sm:flex-row">
         <div className="flex items-center gap-3">
           <Image
-            src="/images/logoLaCanal.jpg"
+            src="/images/logoCanalGran.svg"
             alt="Logotip LA CANAL"
             width={100}
             height={100}
+            className="w-* h-* object-contain"
           />
           <p className="text-sm text-neutral-700">
             © {new Date().getFullYear()} LA CANAL. Tots els drets reservats.

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 21.22px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: #231f20;
+        font-family: Cinzel-Regular, Cinzel;
+        font-variation-settings: 'wght' 400;
+      }
+
+      .cls-2 {
+        font-size: 86.58px;
+      }
+
+      .cls-5 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-3 {
+        font-size: 212.81px;
+      }
+
+      .cls-4 {
+        font-size: 218.05px;
+      }
+
+      .cls-6 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.04em;
+      }
+    </style>
+  </defs>
+  <g>
+    <text class="cls-3" transform="translate(181.84 391.01)"><tspan x="0" y="0">L</tspan></text>
+    <text class="cls-4" transform="translate(393.85 302.66) rotate(-180) scale(.91 1)"><tspan x="0" y="0">C</tspan></text>
+  </g>
+  <text class="cls-2" transform="translate(77.02 585.15)"><tspan x="0" y="0">LA CA</tspan><tspan class="cls-6" x="259.4" y="0">N</tspan><tspan x="330.92" y="0">AL</tspan></text>
+  <text class="cls-1" transform="translate(232.77 623.88)"><tspan x="0" y="0">res</tspan><tspan class="cls-5" x="34.7" y="0">t</tspan><tspan class="cls-7" x="45.48" y="0">a</tspan><tspan x="58.7" y="0">urant</tspan></text>
+</svg>

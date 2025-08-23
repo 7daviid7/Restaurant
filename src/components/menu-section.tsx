@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import SectionHeader from "./section-header";
 import ViewportReveal from "./viewport-reveal";
-import DecorativeFrame from "./decorative-frame";
+import DecorativeFrame from "./decorative-frame-2";
 
 interface MenuSectionProps {
   id?: string;

@@ -55,9 +55,9 @@ export default function GallerySection({
                     "/placeholder.svg?height=400&width=600&query=restaurant%20dish"
                   }
                   alt={img.alt}
-                  width={800}
-                  height={600}
-                  className={`h-36 w-full scale-100 object-cover transition duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05] sm:h-48 lg:h-56
+                  width={900}
+                  height={1000}
+                  className={`h-60 w-full scale-100 object-cover transition duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05] sm:h-48 lg:h-89
                 hover:grayscale-0 // <-- AFEGEIX AQUESTA LÍNIA
                 ${colorImage === i ? "grayscale-0" : "grayscale"}`}
                 />
