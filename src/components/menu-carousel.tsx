@@ -1,17 +1,9 @@
 "use client";
 
-import type React from "react";
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  ChevronLeft,
-  ChevronRight,
-  FileText,
-  Wine,
-  Cookie,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface MenuType {
   id: string;
@@ -27,22 +19,22 @@ const menuTypes: MenuType[] = [
     title: "Carta de Menjar",
     description:
       "Descobreix la nostra selecció de plats tradicionals i creatius",
-    pdfUrl: "/pdfs/carta-menjar.pdf",
+    pdfUrl: "/pdfs/carta_menjar.pdf",
     bgImage: "/images/caroussel-1.jpg",
   },
   {
     id: "vins",
     title: "Carta de Vins",
     description: "Una cuidada selecció de vins locals i internacionals",
-    pdfUrl: "/pdfs/carta-vins.pdf",
-    bgImage: "/images/caroussel-2.png",
+    pdfUrl: "/pdfs/carta_vins.pdf",
+    bgImage: "/images/caroussel-2.jpg",
   },
   {
     id: "postres",
     title: "Carta de Postres",
     description: "Dolços artesans per acabar perfectament el teu àpat",
-    pdfUrl: "/pdfs/carta-postres.pdf",
-    bgImage: "/images/caroussel-3.png",
+    pdfUrl: "/pdfs/carta_postres.pdf",
+    bgImage: "/images/caroussel-3.jpg",
   },
 ];
 
@@ -62,7 +54,23 @@ export default function MenuCarousel({ id = "carousel" }: MenuCarouselProps) {
   };
 
   const openPDF = (pdfUrl: string) => {
-    window.open(pdfUrl, "_blank");
+    console.log("[v0] Attempting to open PDF:", pdfUrl);
+    console.log("[v0] Full URL would be:", window.location.origin + pdfUrl);
+
+    try {
+      const newWindow = window.open(pdfUrl, "_blank");
+      if (!newWindow) {
+        console.error("[v0] Failed to open new window - popup blocked?");
+        alert(
+          "No s'ha pogut obrir el PDF. Comprova si el navegador està bloquejant popups."
+        );
+      } else {
+        console.log("[v0] New window opened successfully");
+      }
+    } catch (error) {
+      console.error("[v0] Error opening PDF:", error);
+      alert("Error obrint el PDF: " + error);
+    }
   };
 
   return (
@@ -112,7 +120,7 @@ export default function MenuCarousel({ id = "carousel" }: MenuCarouselProps) {
                   >
                     <div className="absolute inset-0 bg-black/20"></div>
                     <div className="relative p-12 lg:p-16 xl:p-20 text-center flex flex-col justify-center min-h-[400px] lg:min-h-[500px] xl:min-h-[600px]">
-                      <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-4 lg:mb-6 xl:mb-8 drop-shadow-lg">
+                      <h3 className="text-10xl lg:text-3xl xl:text-4xl font-bold text-white mb-4 lg:mb-6 xl:mb-8 drop-shadow-lg">
                         {menu.title}
                       </h3>
 
