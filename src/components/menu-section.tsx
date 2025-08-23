@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import SectionHeader from "./section-header";
 import ViewportReveal from "./viewport-reveal";
-import DecorativeFrame from "./decorative-frame-1";
+import DecorativeFrame from "./decorative-frame";
 
 interface MenuSectionProps {
   id?: string;
@@ -58,7 +58,7 @@ export default function MenuSection({ id = "menu" }: MenuSectionProps) {
               </span>
               <div className="w-12 h-px bg-gradient-to-l from-transparent to-amber-600"></div>
             </div>
-            <p className="text-amber-700 text-lg font-medium">
+            <p className=" text-lg font-medium">
               Cuina casolana amb productes frescos
             </p>
           </div>
@@ -67,19 +67,14 @@ export default function MenuSection({ id = "menu" }: MenuSectionProps) {
             {menu.map((category, index) => (
               <Card
                 key={category.title}
-                className="bg-white/80 backdrop-blur-sm border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="bg-white/60 p-4 backdrop-blur-sm border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                <CardHeader className="pb-4">
+                <CardHeader className="mt-3">
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold text-lg">
-                        {category.title.charAt(0)}
-                      </span>
-                    </div>
                     <CardTitle className="text-2xl font-bold text-amber-900 mb-3">
                       {category.title}
                     </CardTitle>
-                    <div className="w-16 h-0.5 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto"></div>
+                    <div className="w-16 h-0.5 bg-[#9F9385]  mx-auto"></div>
                   </div>
                 </CardHeader>
 
@@ -99,13 +94,13 @@ export default function MenuSection({ id = "menu" }: MenuSectionProps) {
                             )}
                           </div>
                           <div className="flex flex-col items-end">
-                            <span className="font-bold text-amber-700 text-xl whitespace-nowrap">
+                            <span className="font-bold text-[#654321] text-xl whitespace-nowrap">
                               {item.price}
                             </span>
                           </div>
                         </div>
                         {itemIndex < category.items.length - 1 && (
-                          <div className="mt-4 h-px bg-gradient-to-r from-transparent via-amber-200 to-transparent"></div>
+                          <div className="mt-4 h-px bg-[#9F9385]/70"></div>
                         )}
                       </div>
                     ))}
@@ -116,7 +111,7 @@ export default function MenuSection({ id = "menu" }: MenuSectionProps) {
           </div>
 
           <div className="text-center mt-12 pt-8 border-t border-amber-200">
-            <p className="text-amber-600 text-sm font-medium">
+            <p className=" text-sm font-medium">
               * Els preus poden variar segons la temporada i disponibilitat dels
               productes
             </p>

@@ -13,17 +13,12 @@ import {
   Cookie,
 } from "lucide-react";
 
-interface MenuCarouselProps {
-  id?: string;
-}
-
 interface MenuType {
   id: string;
   title: string;
   description: string;
   pdfUrl: string;
-  icon: React.ReactNode;
-  bgGradient: string;
+  bgImage: string;
 }
 
 const menuTypes: MenuType[] = [
@@ -32,27 +27,28 @@ const menuTypes: MenuType[] = [
     title: "Carta de Menjar",
     description:
       "Descobreix la nostra selecció de plats tradicionals i creatius",
-    pdfUrl: "/pdfs/carta_menjar.pdf",
-    icon: <FileText className="w-8 h-8" />,
-    bgGradient: "from-amber-50 to-orange-100",
+    pdfUrl: "/pdfs/carta-menjar.pdf",
+    bgImage: "/images/caroussel-1.jpg",
   },
   {
     id: "vins",
     title: "Carta de Vins",
     description: "Una cuidada selecció de vins locals i internacionals",
     pdfUrl: "/pdfs/carta-vins.pdf",
-    icon: <Wine className="w-8 h-8" />,
-    bgGradient: "from-red-50 to-rose-100",
+    bgImage: "/images/caroussel-2.png",
   },
   {
     id: "postres",
     title: "Carta de Postres",
     description: "Dolços artesans per acabar perfectament el teu àpat",
     pdfUrl: "/pdfs/carta-postres.pdf",
-    icon: <Cookie className="w-8 h-8" />,
-    bgGradient: "from-yellow-50 to-amber-100",
+    bgImage: "/images/caroussel-3.png",
   },
 ];
+
+interface MenuCarouselProps {
+  id?: string;
+}
 
 export default function MenuCarousel({ id = "carousel" }: MenuCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -69,11 +65,9 @@ export default function MenuCarousel({ id = "carousel" }: MenuCarouselProps) {
     window.open(pdfUrl, "_blank");
   };
 
-  const currentMenu = menuTypes[currentIndex];
-
   return (
     <section className="py-16 px-4">
-      <div className="max-w-4xl mx-auto">
+      <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Les Nostres Cartes
@@ -85,7 +79,7 @@ export default function MenuCarousel({ id = "carousel" }: MenuCarouselProps) {
           </p>
         </div>
 
-        <div className="relative">
+        <div className="relative overflow-hidden">
           {/* Navigation Arrows */}
           <Button
             variant="outline"
@@ -105,35 +99,40 @@ export default function MenuCarousel({ id = "carousel" }: MenuCarouselProps) {
             <ChevronRight className="w-5 h-5" />
           </Button>
 
-          {/* Main Card */}
-          <Card className="mx-12 overflow-hidden shadow-xl">
-            <CardContent
-              className={`p-0 bg-gradient-to-br ${currentMenu.bgGradient}`}
-            >
-              <div className="p-12 text-center">
-                <div className="flex justify-center mb-6">
-                  <div className="p-4 bg-white rounded-full shadow-md text-amber-600">
-                    {currentMenu.icon}
-                  </div>
-                </div>
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {menuTypes.map((menu, index) => (
+              <div key={index} className="min-w-full px-12">
+                <Card className="overflow-hidden shadow-xl">
+                  <CardContent
+                    className="p-0 bg-cover bg-center relative min-h-[400px] lg:min-h-[500px] xl:min-h-[600px]"
+                    style={{ backgroundImage: `url(${menu.bgImage})` }}
+                  >
+                    <div className="absolute inset-0 bg-black/20"></div>
+                    <div className="relative p-12 lg:p-16 xl:p-20 text-center flex flex-col justify-center min-h-[400px] lg:min-h-[500px] xl:min-h-[600px]">
+                      <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-4 lg:mb-6 xl:mb-8 drop-shadow-lg">
+                        {menu.title}
+                      </h3>
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {currentMenu.title}
-                </h3>
-
-                <p className="text-gray-700 mb-8 max-w-md mx-auto leading-relaxed">
-                  {currentMenu.description}
-                </p>
-
-                <Button
-                  onClick={() => openPDF(currentMenu.pdfUrl)}
-                  className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-200"
-                >
-                  Obrir Carta
-                </Button>
+                      <p className="text-white mb-8 lg:mb-10 xl:mb-12 max-w-md lg:max-w-lg xl:max-w-xl mx-auto leading-relaxed lg:text-lg xl:text-xl drop-shadow-md">
+                        {menu.description}
+                      </p>
+                      <div className="flex justify-center">
+                        <Button
+                          onClick={() => openPDF(menu.pdfUrl)}
+                          className="bg-transparent text-white border-2 border-white px-10 py-4 transition-all duration-300 hover:bg-white hover:text-gray-900 max-w-[250px] text-lg font-semibold"
+                        >
+                          Obrir Carta
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
-            </CardContent>
-          </Card>
+            ))}
+          </div>
 
           {/* Indicators */}
           <div className="flex justify-center mt-8 space-x-2">
