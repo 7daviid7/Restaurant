@@ -49,7 +49,7 @@ export default function MenuSection({ id = "menu" }: MenuSectionProps) {
   return (
     <div className="bg-gradient-to-br from-amber-50 to-orange-50 py-16">
       <div className="max-w-7xl mx-auto px-6">
-        <DecorativeFrame>
+        <DecorativeFrame imageSrc="/images/prova/backgroundCafe.jpeg">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-4 mb-6">
               <div className="w-12 h-px bg-gradient-to-r from-transparent to-amber-600"></div>
@@ -67,7 +67,7 @@ export default function MenuSection({ id = "menu" }: MenuSectionProps) {
             {menu.map((category, index) => (
               <Card
                 key={category.title}
-                className="bg-white/60 p-4 backdrop-blur-sm border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="bg-white/40 p-4 backdrop-blur-sm border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <CardHeader className="mt-3">
                   <div className="text-center">
@@ -110,8 +110,8 @@ export default function MenuSection({ id = "menu" }: MenuSectionProps) {
             ))}
           </div>
 
-          <div className="text-center mt-12 pt-8 border-t border-amber-200">
-            <p className=" text-sm font-medium">
+          <div className=" text-center mt-12 pt-8 border-t m-10">
+            <p className=" text-sm font-medium ">
               * Els preus poden variar segons la temporada i disponibilitat dels
               productes
             </p>

@@ -6,27 +6,28 @@ import { cn } from "@/lib/utils";
 interface DecorativeFrameProps {
   children: ReactNode;
   className?: string;
+  imageSrc: string; // Prop per a la URL de la imatge
 }
 
 /**
- * Marc amb efecte de paper cremat i taca de cafè.
+ * Marc amb efecte de paper cremat i una imatge de fons.
  */
 export default function DecorativeFrame({
   children,
   className,
+  imageSrc, // Rep la nova prop
 }: DecorativeFrameProps) {
   return (
     <div
       className={cn("relative rounded-[10px] p-[2px] bg-[#e3dfd2]", className)}
     >
       <div className="relative overflow-hidden rounded-[8px] p-4 sm:p-6 shadow-inner bg-[#FBF9F1]">
-        {/* Imatge de la taca de cafè (capa intermèdia) */}
-        <div className="absolute inset-0 z-10 opacity-60">
+        {/* Imatge de fons decorativa (capa intermèdia) */}
+        <div className="absolute inset-0 z-10 opacity-80">
           <Image
-            src="/images/prova/descarga.jpeg"
-            alt="Taca de cafè"
-            fill // Ocupa tot el contenidor
-            className="h-1"
+            src={imageSrc} // Utilitza la prop per a la font de la imatge
+            alt="Fons decoratiu" // Alt text genèric
+            fill
           />
         </div>
 
